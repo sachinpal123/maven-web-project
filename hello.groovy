@@ -1,7 +1,17 @@
 job('DSL-test') {
     scm {
-        git('git@github.com/sachinpal123/maven-web-project','master')
-    }
+        git {
+            remote {
+                name('origin')
+                url('https://github.com/sachinpal123/maven-web-project.git')
+            }
+            extensions {
+                mergeOptions {
+                    remote('origin')
+                    branch('master')
+                }
+            }
+        }
     triggers {
         scm('* * * * *')
     }
