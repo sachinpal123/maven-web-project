@@ -1,22 +1,12 @@
+def gitUrl = 'git://github.com/test/test'
 job('DSL-test') {
     scm {
-        git {
-            remote {
-                name('origin')
-                url('https://github.com/sachinpal123/maven-web-project.git')
-            }
-            extensions {
-                mergeOptions {
-                    remote('origin')
-                    branch('master')
-                }
-            }
-        }
+        git(gitUrl)
+    }
     triggers {
-        scm('* * * * *')
+        scm('*/15 * * * *')
     }
     steps {
-        maven('clean package','maven-web-project/pom.xml')
+        maven('-e clean test')
     }
-}
 }
