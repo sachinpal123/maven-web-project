@@ -1,6 +1,6 @@
 job('DSL-test') {
     scm {
-        git('git@github.com/sachinpal123/maven-web-project',master)
+        git('git@github.com/sachinpal123/maven-web-project')
     }
     triggers {
         scm('* * * * *')
