@@ -19,3 +19,4 @@ job('DSL-test') {
         maven('clean package','maven-web-project/pom.xml')
     }
 }
+}
