@@ -1,4 +1,4 @@
-def gitUrl = 'git://github.com/test/test'
+def gitUrl = 'git://github.com/sachinpal123/maven-web-project'
 job('DSL-test') {
     scm {
         git(gitUrl)
